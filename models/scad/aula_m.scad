@@ -213,8 +213,47 @@ module cattedra() {
     translate([200+120+140,50,0]) tavolo_1();
 }
 
+module sedia() {
+    cube([5,5,45]);
+    translate([40,0,0]) cube([5,5,45]);
+    translate([40,40,0]) cube([5,5,80]);
+    translate([0,40,0]) cube([5,5,80]);
+    
+    translate([0,0,40]) cube([45,45,5]);
+    
+    translate([0,40,50]) cube([45,5,30]);
+}
+
+module sedie() {
+    translate([80,390,0]) sedia();
+    translate([80+130,390,0]) sedia();
+    
+    translate([80,390+160,0]) sedia();
+    translate([80+130,390+160,0]) sedia();
+    
+    translate([80,390+160*2,0]) sedia();
+    translate([80+130,390+160*2,0]) sedia();
+    
+    
+    
+    translate([740-80,390,0]) sedia();
+    translate([740-80+130,390,0]) sedia();
+    translate([740-80-130,390,0]) sedia();
+    
+    translate([740-80,390+160,0]) sedia();
+    translate([740-80+130,390+160,0]) sedia();
+    translate([740-80-130,390+160,0]) sedia();
+    
+    translate([740-80,390+160*2,0]) sedia();
+    translate([740-80+130,390+160*2,0]) sedia();
+    translate([740-80-130,390+160*2,0]) sedia();
+    
+    
+}
+
 pareti();
 tavoli();
 cattedra();
+sedie();
 
 translate([880,240,0]) rotate([0,0,90], [0,0,1]) audio();
