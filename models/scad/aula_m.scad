@@ -166,12 +166,12 @@ module pareti() {
     module parete_nord() {
         
         union() {
-            translate([110,216-20,0]) cube([20,670+19,290]);
+            translate([110,216,0]) cube([20,670,290]);
             difference(){
-                cube([20,216,290]);
+                cube([20,216+20,290]);
                 translate([0,18,0]) cube([20,180,210]);
             }
-            translate([20,216-20,0]) cube([90,20,290]);
+            translate([20,216,0]) cube([90,20,290]);
         }
         
     }
@@ -186,6 +186,29 @@ module pareti() {
     translate([28,-20,0]) parete_est();
 }
 
+module tavoli() {
+    module fila() {
+        translate([20,345,0]) tavolo_1();
+        translate([20+140,345,0]) tavolo_1();
+    }
+    
+    module fila_2() {
+        translate([740,345,0]) tavolo_1();
+        translate([740-140,345,0]) tavolo_1();
+        translate([740-140*2,345,0]) tavolo_1();
+    }
+    
+    fila();
+    translate([20,160,0]) fila();
+    translate([20,160*2,0]) fila();
+    
+    fila_2();
+    translate([0,160,0]) fila_2();
+    translate([0,160*2,0]) fila_2();
+}
+
 pareti();
+tavoli();
 
-
+translate([350,50,0]) tavolo_2();
+translate([880,240,0]) rotate([0,0,90], [0,0,1]) audio();
