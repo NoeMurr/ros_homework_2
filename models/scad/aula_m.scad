@@ -208,9 +208,9 @@ module tavoli() {
 }
 
 module cattedra() {
-    translate([200,50,0]) tavolo_2();
-    translate([200+120,50,0]) tavolo_1();
-    translate([200+120+140,50,0]) tavolo_1();
+    translate([200,150,0]) tavolo_2();
+    translate([200+120,150,0]) tavolo_1();
+    translate([200+120+140,150,0]) tavolo_1();
 }
 
 module sedia() {
@@ -254,6 +254,7 @@ module sedie() {
 pareti();
 tavoli();
 cattedra();
-sedie();
+
+translate([40+200,0,0]) armadio();
 
 translate([880,240,0]) rotate([0,0,90], [0,0,1]) audio();
