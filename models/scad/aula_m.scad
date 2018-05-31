@@ -207,8 +207,14 @@ module tavoli() {
     translate([0,160*2,0]) fila_2();
 }
 
+module cattedra() {
+    translate([200,50,0]) tavolo_2();
+    translate([200+120,50,0]) tavolo_1();
+    translate([200+120+140,50,0]) tavolo_1();
+}
+
 pareti();
 tavoli();
+cattedra();
 
-translate([350,50,0]) tavolo_2();
 translate([880,240,0]) rotate([0,0,90], [0,0,1]) audio();
