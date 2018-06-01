@@ -187,6 +187,10 @@ module pareti() {
 }
 
 module tavoli() {
+    module prima_fila() {
+        translate([20,345,0]) tavolo_2();
+        translate([20+120,345,0]) tavolo_1();
+    }
     module fila() {
         translate([20,345,0]) tavolo_1();
         translate([20+140,345,0]) tavolo_1();
@@ -198,7 +202,7 @@ module tavoli() {
         translate([740-140*2,345,0]) tavolo_1();
     }
     
-    fila();
+    prima_fila();
     translate([20,160,0]) fila();
     translate([20,160*2,0]) fila();
     
