@@ -11,8 +11,10 @@ if [ $# -gt 0 ] && [ $1 == 'setup' ]; then
 fi
 
 echo "Launching ROS simulation" 
-CMD_1="cd ~/catkin_ws && source devel/setup.bash; export TURTLEBOT3_MODEL=waffle;roslaunch turtlebot3_gazebo ros_homework_2.launch"
-CMD_2="cd ~/catkin_ws && source devel/setup.bash;export TURTLEBOT3_MODEL=waffle;roslaunch turtlebot3_gazebo turtlebot3_simulation.launch" 
+COMMON="cd ~/catkin_ws; source devel/setup.bash; export TURTLEBOT3_MODEL=waffle"
+CMD_1="$COMMON; roslaunch turtlebot3_gazebo ros_homework_2.launch" 
+CMD_2="$COMMON; roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/catkin_ws/src/ros_homework_2/map.yaml"
+CMD_3="$COMMON; rosrun rviz rviz -d `rospack find turtlebot3_navigation`/rviz/turtlebot3_nav.rviz"
 
 $TERMINAL_COMMAND -- bash -c "exit 0" > /dev/null 2> /dev/null
 
@@ -23,6 +25,8 @@ fi
 
 
 $TERMINAL_COMMAND -- bash -c "$CMD_1"
-sleep 5
+sleep 8
 $TERMINAL_COMMAND -- bash -c "$CMD_2"
+sleep 5
+$TERMINAL_COMMAND -- bash -c "$CMD_3"
 
