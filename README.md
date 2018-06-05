@@ -22,7 +22,7 @@ Il video mostra la simulazione finale utilizzando RViz per far navigare il robot
 Clonare il repository ed eseguire `launch.sh setup`. Oltre a copiare i file nelle directory necessarie verrà anche eseguita la simulazione. Si presuppone l'esistenza del workspace `catkin_ws`.
 ```
 cd ~/catkin_ws/src
-git clone github.com/noemurr/ros_homework_2
+git clone https://github.com/noemurr/ros_homework_2
 cd ros_homework_2
 ./launch.sh setup
 ```
