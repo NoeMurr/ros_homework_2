@@ -255,10 +255,13 @@ module sedie() {
     
 }
 
-pareti();
-tavoli();
-cattedra();
+scale([0.01,0.01,0.01]) {
 
-translate([40+200,0,0]) armadio();
+    pareti();
+    tavoli();
+    cattedra();
 
-translate([880,240,0]) rotate([0,0,90], [0,0,1]) audio();
+    translate([40+200,0,0]) armadio();
+
+    translate([880,240,0]) rotate([0,0,90], [0,0,1]) audio();
+}
