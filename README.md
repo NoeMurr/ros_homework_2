@@ -18,17 +18,16 @@ Per la modellazione abbiamo usato il software [OpenSCAD](http://openscad.org), s
 La mappa è stata realizzata utilizzando RViz e SLAM, navigando TurtleBot3 in modalità manuale.
 Il video mostra la simulazione finale utilizzando RViz per far navigare il robot utilizzando la mappa creata.
 
-## Setup
-Clonare il repository ed eseguire `setup.sh`. Si presuppone l'esistenza del workspace `catkin_ws`.
+## Setup ed esecuzione
+Clonare il repository ed eseguire `launch.sh setup`. Oltre a copiare i file nelle directory necessarie verrà anche eseguita la simulazione. Si presuppone l'esistenza del workspace `catkin_ws`.
 ```
 cd ~/catkin_ws/src
 git clone github.com/noemurr/ros_homework_2
 cd ros_homework_2
-./setup.sh
+./launch.sh setup
 ```
 
-## Esecuzione
-Per eseguire la simulazione con navigazione in modalità autonoma:
+Per eseguire la simulazione successivamente al setup si può eseguire semplicemente lo script `launch.sh`
 ```
 cd ~/catkin_ws/src/ros_homework_2
 ./launch.sh
